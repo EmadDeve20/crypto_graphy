@@ -1,7 +1,7 @@
 #!/bin/env python3
 import random
 
-world = "abcdefghijklmnopqrstuvwxyz"
+alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 try:
     choice_mode = input("""
@@ -27,12 +27,12 @@ def crypto():
         key = random.randint(1,26)
 
     for i in range(len(message)):
-        for j in range(len(world)):
-            if message[i] == world[j]:
+        for j in range(len(alphabet)):
+            if message[i] == alphabet[j]:
                 if key + j >= 26:
                     while key+j >= 26:
                         key -= 26
-                crypto += world[key+j]
+                crypto += alphabet[key+j]
                 break
 
     print(f"This is Your sicret message: {crypto}")
@@ -40,7 +40,7 @@ def crypto():
 def uncrypto():
     text = input("Enter Your text:")
     text = text.lower()
-    crypto = ''
+    message = ''
 
     try:
         key = input("Enter Your Key:");key = int(key)
@@ -49,16 +49,21 @@ def uncrypto():
         key = random.randint(1,26)
 
     for i in range(len(text)):
-        for j in range(len(world)):
-            if text[i] == world[j]:
+        for j in range(len(alphabet)):
+            if text[i] == alphabet[j]:
+                if key >= 26:
+                   while key >= 26:
+                        key -= 26
+
                 if j-key < 0:
-                    crypto += world[j-key+26]
-                    break
-                else:
-                    crypto += world[j-key]
+                    message += alphabet[j-key+26]
                     break
 
-    print(f"This is Your sicret message: {crypto}")
+                else:
+                    message += alphabet[j-key]
+                    break
+
+    print(f"This is Your sicret message: {message}")
 
 
 if __name__ == "__main__":
