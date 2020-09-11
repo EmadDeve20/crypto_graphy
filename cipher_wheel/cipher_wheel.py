@@ -6,8 +6,8 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 try:
     choice_mode = input("""
 Enter Your mode:
-1 - crypto message(defult)
-2 - uncrypto message
+1 - hide message(default)
+2 - Break the secret message
 """) ; choice_mode = int(choice_mode)
 
 except:
@@ -16,14 +16,14 @@ except:
 
 
 def crypto():
-    message = input("Enter Your message:")
+    message = input("Enter Your message(don't use space): ")
     message = message.lower()
     crypto = ''
 
     try:
-        key = input("Enter Your Key:");key = int(key)
+        key = input("Enter Your Key: ");key = int(key)
     except:
-        print(f"this is {key} not number but i seting a random number for You! (1-26)")
+        print(f"this is {key}, not a number but I set a random number for You!")
         key = random.randint(1,26)
 
     for i in range(len(message)):
@@ -35,17 +35,17 @@ def crypto():
                 crypto += alphabet[key+j]
                 break
 
-    print(f"This is Your sicret message: {crypto}")
+    print(f"This is Your secret message: {crypto}")
 
 def uncrypto():
-    text = input("Enter Your text:")
+    text = input("Enter Your message(don't use space): ")
     text = text.lower()
     message = ''
 
     try:
-        key = input("Enter Your Key:");key = int(key)
+        key = input("Enter Your Key: ");key = int(key)
     except:
-        print(f"this is {key} not number but i seting a random number for You! (1-26)")
+        print(f"this is {key}, not a number but I set a random number for You!")
         key = random.randint(1,26)
 
     for i in range(len(text)):
@@ -63,7 +63,7 @@ def uncrypto():
                     message += alphabet[j-key]
                     break
 
-    print(f"This is Your sicret message: {message}")
+    print(f"This is your broken message: {message}")
 
 
 if __name__ == "__main__":
