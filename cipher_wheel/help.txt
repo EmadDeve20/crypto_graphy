@@ -13,4 +13,4 @@ python ".name Filename .py"
 
 And to use C files, if you do not know how to research them, you have to compile them (depending on the operating system you are using).
 
-My description of Ramzarz is not complete and accurate and you can do more research on this
+My description of cipher wheel is not complete and accurate and you can do more research on this
