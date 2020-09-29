@@ -6,7 +6,7 @@ Emad becomes 1 fnbe with the key
 
 The plus version goes one after the first letter and the negative version one less.
 For example, Emad in the pluses version becomes with the key one: fodh
--------------------------------------------------- - ------------------------------------------------ ---- ------------
+
 You can do this to run Python files:
 python ".name Filename .py"
 (Of course, you must first install Python)
